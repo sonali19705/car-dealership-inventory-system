@@ -122,11 +122,14 @@ This project follows:
 - Validation middleware
 - Password hashing
 - Integration tests using Jest and Supertest
+- Vehicle Model
+- Get All Vehicles API
+- Vehicle Search API
 
 ### 🚧 In Progress
 
 - JWT Authentication Middleware
-- Protected Routes
+- Vehicle Create API
 
 ### 📌 Planned
 

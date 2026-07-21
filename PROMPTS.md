@@ -89,3 +89,40 @@ Requirements:
   - Service
   - Model
 - Write integration tests using Jest and Supertest before implementation.
+
+# Prompt 5 – Get All Vehicles
+
+## Purpose
+
+Implement the first Vehicle API using TDD.
+
+### Prompt
+
+> Help me implement the GET /api/vehicles endpoint using Test-Driven Development (TDD).
+
+Requirements:
+
+- Return all vehicles from MongoDB.
+- Follow Route → Middleware → Controller → Service → Model architecture.
+- Write integration tests before implementation.
+- Return HTTP 200 with an empty array when no vehicles exist.
+
+# Prompt 6 – Search Vehicles
+
+## Purpose
+
+Implement the vehicle search API using Test-Driven Development (TDD).
+
+### Prompt
+
+> Help me implement the GET /api/vehicles/search endpoint using Test-Driven Development (TDD).
+
+Requirements:
+
+- Support searching by make.
+- Support searching by model.
+- Support searching by category.
+- Support searching by minimum and maximum price.
+- Allow combining multiple filters.
+- Use MongoDB dynamic query building.
+- Write integration tests for each search scenario.

@@ -200,3 +200,72 @@ Protect private APIs using JWT authentication.
 - Customer Dashboard
 - Role-Based Authorization
 - Vehicle Purchase Workflow
+
+# Feature 3 – Get All Vehicles
+
+## Objective
+
+Retrieve all vehicles available in inventory.
+
+## Endpoint
+
+GET /api/vehicles
+
+## Development Steps
+
+- Created Vehicle model.
+- Added vehicle route.
+- Added vehicle controller.
+- Added vehicle service.
+- Wrote integration test using Jest and Supertest.
+- Returned all vehicles from MongoDB.
+
+## HTTP Status Codes
+
+| Code | Meaning |
+|------|---------|
+| 200 | Vehicles retrieved successfully |
+| 500 | Internal server error |
+
+# Feature 4 – Search Vehicles
+
+## Objective
+
+Allow users to search vehicles using one or more filters.
+
+## Endpoint
+
+GET /api/vehicles/search
+
+## Supported Query Parameters
+
+- make
+- model
+- category
+- minPrice
+- maxPrice
+
+## Example Requests
+
+GET /api/vehicles/search?make=Toyota
+
+GET /api/vehicles/search?category=SUV
+
+GET /api/vehicles/search?minPrice=1000000&maxPrice=3000000
+
+GET /api/vehicles/search?make=Toyota&category=SUV
+
+## Development Steps
+
+- Added search endpoint.
+- Built dynamic MongoDB query object.
+- Implemented case-insensitive search using regular expressions.
+- Added price range filtering.
+- Wrote integration tests for all supported filters.
+
+## HTTP Status Codes
+
+| Code | Meaning |
+|------|---------|
+| 200 | Search completed successfully |
+| 500 | Internal server error |
