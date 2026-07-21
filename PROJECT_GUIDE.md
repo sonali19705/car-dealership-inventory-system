@@ -56,3 +56,50 @@ Registration
 - Added AuthService
 - Added MongoDB persistence
 - Added duplicate email validation
+
+Login Module
+Objective
+
+Authenticate registered users and issue a JWT for accessing protected APIs.
+
+Request Flow
+Client
+   │
+   ▼
+Route
+   │
+   ▼
+Validation Middleware
+   │
+   ▼
+Controller
+   │
+   ▼
+Service
+   │
+   ▼
+MongoDB
+Steps
+Validate request.
+Find user by email.
+Compare password using bcrypt.
+Generate JWT.
+Return token and user details.
+Security
+Passwords are never returned.
+Invalid credentials return the same error message.
+JWT expires after 1 day.
+Password comparison uses bcrypt.
+HTTP Status Codes
+| Code | Meaning                   |
+| ---- | ------------------------- |
+| 200  | Login successful          |
+| 400  | Validation failed         |
+| 401  | Invalid email or password |
+| 500  | Internal server error     |
+
+Libraries
+-bcryptjs
+-jsonwebtoken
+-Jest
+-Supertest
