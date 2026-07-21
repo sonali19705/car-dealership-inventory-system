@@ -24,6 +24,7 @@ Set up the backend project structure.
 - Added environment configuration.
 - Prepared the project for future feature development.
 
+<<<<<<< HEAD
 ---
 
 ## Feature: User Login
@@ -40,4 +41,20 @@ Requirements:
 - Generate JWT after successful authentication.
 - Return authenticated user details excluding the password.
 - Follow Route → Middleware → Controller → Service → Model architecture.
+=======
+## Feature: User Registration
+
+### Prompt
+
+Help me implement user registration using Test Driven Development (TDD) for an Express and MongoDB backend.
+
+Requirements:
+- Validate name, email, and password.
+- Password must be at least 6 characters.
+- Prevent duplicate email registration.
+- Hash passwords using bcrypt.
+- Store users in MongoDB using Mongoose.
+- Always assign the customer role regardless of client input.
+- Follow a layered architecture (Route → Middleware → Controller → Service → Model).
+>>>>>>> feature/auth
 - Write integration tests with Jest and Supertest before implementing functionality.
