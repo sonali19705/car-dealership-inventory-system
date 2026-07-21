@@ -14,5 +14,17 @@ router.post(
     validateVehicle,
     vehicleController.createVehicle
 );
-
+router.put(
+    "/:id",
+    authMiddleware,
+    adminMiddleware,
+    validateVehicle,
+    vehicleController.updateVehicle
+);
+router.delete(
+    "/:id",
+    authMiddleware,
+    adminMiddleware,
+    vehicleController.deleteVehicle
+);
 module.exports = router;
