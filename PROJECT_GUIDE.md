@@ -269,3 +269,63 @@ GET /api/vehicles/search?make=Toyota&category=SUV
 |------|---------|
 | 200 | Search completed successfully |
 | 500 | Internal server error |
+# Feature 5 – JWT Authentication Middleware
+
+## Objective
+
+Protect private APIs using JSON Web Tokens (JWT).
+
+## Responsibilities
+
+- Read Authorization header
+- Validate Bearer token
+- Verify JWT
+- Attach decoded user to req.user
+- Return 401 for missing or invalid token
+
+## Files Added
+
+middleware/authMiddleware.js
+
+tests/middleware/authMiddleware.test.js
+
+## Test Cases
+
+- Missing token
+- Invalid token
+- Valid token
+
+---
+
+# Feature 6 – Admin Authorization Middleware
+
+## Objective
+
+Allow only admin users to access protected admin APIs.
+
+## Responsibilities
+
+- Check req.user.role
+- Allow admin users
+- Return 403 for non-admin users
+
+## Files Added
+
+middleware/adminMiddleware.js
+
+tests/middleware/adminMiddleware.test.js
+
+## Test Cases
+
+- Admin user
+- Customer user
+
+---
+
+## Next Feature
+
+Protected Vehicle APIs
+
+- POST /api/vehicles
+- PUT /api/vehicles/:id
+- DELETE /api/vehicles/:id
