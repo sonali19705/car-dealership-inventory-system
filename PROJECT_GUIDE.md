@@ -329,3 +329,96 @@ Protected Vehicle APIs
 - POST /api/vehicles
 - PUT /api/vehicles/:id
 - DELETE /api/vehicles/:id
+
+Feature 6: Create Vehicle API (Admin)
+Overview
+
+Implemented the Create Vehicle functionality to allow authenticated administrators to add new vehicles to the inventory. This endpoint is protected using JWT authentication and role-based authorization.
+
+Endpoint
+POST /api/vehicles
+Access Control
+Authentication: Required (JWT)
+Authorization: Admin only
+Request Body
+{
+  "make": "Toyota",
+  "model": "Fortuner",
+  "category": "SUV",
+  "price": 4200000,
+  "quantity": 5
+}
+Validation Rules
+Field	Validation
+make	Required, non-empty
+model	Required, non-empty
+category	Required, non-empty
+price	Required, number, >= 0
+quantity	Required, number, >= 0
+Success Response
+
+Status: 201 Created
+
+{
+  "message": "Vehicle created successfully",
+  "vehicle": {
+    "_id": "...",
+    "make": "Toyota",
+    "model": "Fortuner",
+    "category": "SUV",
+    "price": 4200000,
+    "quantity": 5
+  }
+}
+Error Responses
+Status	Condition
+400	Invalid or missing request data
+401	Missing or invalid JWT token
+403	Authenticated user is not an admin
+500	Internal server error
+Architecture Flow
+Client
+   │
+POST /api/vehicles
+   │
+authMiddleware
+   │
+adminMiddleware
+   │
+validateVehicle
+   │
+vehicleController
+   │
+vehicleService
+   │
+Vehicle Model
+   │
+MongoDB
+Testing
+
+Implemented using Jest and Supertest.
+
+Covered scenarios:
+
+Create vehicle successfully
+Missing make
+Missing model
+Missing category
+Invalid price
+Invalid quantity
+Missing authentication token
+Customer attempting admin action
+Database failure (500)
+Files Added / Updated
+src/
+├── middleware/
+│   └── validateVehicle.js
+├── controllers/
+│   └── vehicleController.js
+├── services/
+│   └── vehicleService.js
+├── routes/
+│   └── vehicleRoutes.js
+└── tests/
+    └── vehicle/
+        └── createVehicle.test.js
