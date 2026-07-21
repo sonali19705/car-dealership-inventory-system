@@ -422,3 +422,17 @@ src/
 └── tests/
     └── vehicle/
         └── createVehicle.test.js
+
+Update Vehicle
+Purpose
+Endpoint
+Request
+Validation
+Response
+Tests
+Delete Vehicle
+Purpose
+Endpoint
+Response
+Error Handling
+Tests

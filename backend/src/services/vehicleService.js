@@ -39,8 +39,23 @@ const searchVehicles = async (queryParams) => {
 const createVehicle = async (vehicleData) => {
     return await Vehicle.create(vehicleData);
 };
+const updateVehicle = async (id, vehicleData) => {
+    return await Vehicle.findByIdAndUpdate(
+        id,
+        vehicleData,
+        {
+            new: true,
+            runValidators: true,
+        }
+    );
+};
+const deleteVehicle = async (id) => {
+    return await Vehicle.findByIdAndDelete(id);
+};
 module.exports = {
     getAllVehicles,
     searchVehicles,
     createVehicle,
+    updateVehicle,
+    deleteVehicle,
 };

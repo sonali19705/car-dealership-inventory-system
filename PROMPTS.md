@@ -172,3 +172,34 @@ Requirements:
   - category (required)
   - price (required, numeric, >= 0)
   - quantity (required, numeric, >= 0)
+
+### Prompt 10
+Implement a secure PUT /api/vehicles/:id endpoint for the Car Dealership Inventory Management System using Node.js, Express, MongoDB, and Mongoose.
+
+Follow the existing project architecture:
+Route → Validation Middleware → Controller → Service → Model.
+
+Requirements:
+- Only authenticated admin users can update vehicles.
+- Reuse the existing vehicle validation middleware.
+- Return 404 if the vehicle does not exist.
+- Return the updated vehicle.
+- Handle errors gracefully with appropriate HTTP status codes.
+- Follow strict but pragmatic TDD.
+- Generate comprehensive Jest and Supertest test cases for success, validation, authorization, not found, and server error scenarios.
+- Do not modify the existing project architecture.
+
+### Prompt 11
+Implement a secure DELETE /api/vehicles/:id endpoint for the Car Dealership Inventory Management System using Node.js, Express, MongoDB, and Mongoose.
+
+Follow the existing project architecture:
+Route → Controller → Service → Model.
+
+Requirements:
+- Only authenticated admin users can delete vehicles.
+- Return 404 if the vehicle does not exist.
+- Return a success message after deletion.
+- Handle authorization and server errors appropriately.
+- Follow strict but pragmatic TDD.
+- Generate comprehensive Jest and Supertest test cases covering success, unauthorized access, forbidden access, vehicle not found, and server error scenarios.
+- Keep the implementation consistent with the existing project structure.
