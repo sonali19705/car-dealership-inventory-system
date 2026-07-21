@@ -45,3 +45,14 @@ Development:
 - Separated app.js and server.js to improve testability.
 - Using MongoDB Memory Server for isolated integration tests.
 - Keeping database connection logic in a dedicated config module.
+
+## Development Process
+
+Registration
+- Wrote registration endpoint test
+- Implemented minimum route (Green)
+- Added validation tests
+- Refactored to AuthController
+- Added AuthService
+- Added MongoDB persistence
+- Added duplicate email validation
