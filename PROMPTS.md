@@ -1,18 +1,28 @@
 # PROMPTS.md
 
-## Prompt 1
+This document contains the major prompts used during the development of the project.
 
-**Purpose:** Project planning
+---
 
-**Prompt:**
-Act as a Senior Software Engineer and TDD mentor. Guide me in building this project incrementally using Test-Driven Development, clean architecture, REST API best practices, and industry-standard coding practices. Explain design decisions before implementation, help review my code, suggest improvements.
+# Prompt 1 – Project Planning
 
-## Prompt 2 – Backend Foundation
+## Purpose
 
-### Objective
+Project planning and development approach.
+
+### Prompt
+
+> Act as a Senior Software Engineer and TDD mentor. Guide me in building this project incrementally using Test-Driven Development (TDD), clean architecture, REST API best practices, and industry-standard coding practices. Explain design decisions before implementation, help review my code, and suggest improvements.
+
+---
+
+# Prompt 2 – Backend Foundation
+
+## Purpose
+
 Set up the backend project structure.
 
-### Prompt-3
+### Prompt
 
 > Help me configure the backend foundation for an Express.js application. Recommend a clean folder structure, required dependencies, environment configuration, testing setup, and project organization suitable for a production-ready application.
 
@@ -24,37 +34,58 @@ Set up the backend project structure.
 - Added environment configuration.
 - Prepared the project for future feature development.
 
-<<<<<<< HEAD
 ---
 
-## Feature: User Login
+# Prompt 3 – User Registration
 
-### Prompt-4
+## Purpose
 
-Help me implement a secure login API using Test-Driven Development (TDD).
-
-Requirements:
-- Validate email and password.
-- Find user by email.
-- Compare passwords using bcrypt.
-- Return 401 for invalid credentials.
-- Generate JWT after successful authentication.
-- Return authenticated user details excluding the password.
-- Follow Route → Middleware → Controller → Service → Model architecture.
-=======
-## Feature: User Registration
+Implement user registration using Test-Driven Development (TDD).
 
 ### Prompt
 
-Help me implement user registration using Test Driven Development (TDD) for an Express and MongoDB backend.
+> Help me implement user registration using Test-Driven Development (TDD) for an Express.js and MongoDB backend.
 
 Requirements:
+
 - Validate name, email, and password.
 - Password must be at least 6 characters.
 - Prevent duplicate email registration.
 - Hash passwords using bcrypt.
 - Store users in MongoDB using Mongoose.
 - Always assign the customer role regardless of client input.
-- Follow a layered architecture (Route → Middleware → Controller → Service → Model).
->>>>>>> feature/auth
-- Write integration tests with Jest and Supertest before implementing functionality.
+- Follow the layered architecture:
+  - Route
+  - Middleware
+  - Controller
+  - Service
+  - Model
+- Write integration tests using Jest and Supertest before implementation.
+
+---
+
+# Prompt 4 – User Login
+
+## Purpose
+
+Implement secure user login using Test-Driven Development (TDD).
+
+### Prompt
+
+> Help me implement a secure login API using Test-Driven Development (TDD).
+
+Requirements:
+
+- Validate email and password.
+- Find the user by email.
+- Compare passwords using bcrypt.
+- Return **401 Unauthorized** for invalid credentials.
+- Generate a JWT after successful authentication.
+- Return authenticated user details without the password.
+- Follow the layered architecture:
+  - Route
+  - Middleware
+  - Controller
+  - Service
+  - Model
+- Write integration tests using Jest and Supertest before implementation.

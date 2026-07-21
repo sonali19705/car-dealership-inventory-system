@@ -112,7 +112,6 @@ This project follows:
 
 ## Current Progress
 
-<<<<<<< HEAD
 ### ✅ Completed
 
 - Backend project setup
@@ -122,7 +121,7 @@ This project follows:
 - JWT generation
 - Validation middleware
 - Password hashing
-- Integration tests using Jest & Supertest
+- Integration tests using Jest and Supertest
 
 ### 🚧 In Progress
 
@@ -153,24 +152,10 @@ Current test coverage includes:
 - Duplicate email handling
 - Authentication success and failure scenarios
 
-Testing tools:
+### Testing Tools
 
 - Jest
 - Supertest
-=======
-- ✅ Project setup completed
-- ✅ Backend foundation configured
-- ## Features
-
-### Authentication
-
-- User Registration
-- Input validation
-- Duplicate email prevention
-- Password hashing using bcrypt
-- Customer role assigned by default
-- Integration tests using Jest and Supertest
->>>>>>> feature/auth
 
 ---
 
@@ -184,7 +169,7 @@ Testing tools:
 ### How I Used AI
 
 - Discussed software architecture and folder structure.
-- Planned the backend setup and dependency selection.
+- Planned backend setup and dependency selection.
 - Followed a Test-Driven Development (TDD) workflow.
 - Reviewed design decisions and edge cases.
 - Discussed testing strategy and API design.
@@ -192,27 +177,10 @@ Testing tools:
 
 ### Reflection
 
-<<<<<<< HEAD
-
-AI acted as a development assistant for brainstorming, design discussions, testing strategy, and code review. GitHub Copilot assisted with code completion. I reviewed, understood, tested, and modified all generated suggestions before including them in the project.
+AI acted as a development assistant for brainstorming, architecture discussions, testing strategy, and code review. GitHub Copilot assisted with code completion. I reviewed, understood, tested, and modified all AI-generated suggestions before including them in the project.
 
 ---
 
 ## License
 
 This project was developed as part of the **Incubyte Software Craftsman Internship Assessment**.
-=======
-AI acted as a development assistant for brainstorming, design discussions, and code review. I verified all suggestions, implemented the final solution myself, and ensured I understood every design decision before including it in the project.
-
-AI tools were used as development assistants throughout the project.
-
-- **ChatGPT**
-  - Discussed software architecture and design decisions.
-  - Reviewed TDD workflow and testing strategy.
-  - Helped refine validation and backend implementation.
-
-- **GitHub Copilot**
-  - Assisted with code completion while implementing features.
-
-All code was reviewed, understood, tested, and modified as needed before being committed.
->>>>>>> feature/auth

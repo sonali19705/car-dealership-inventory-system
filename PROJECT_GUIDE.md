@@ -2,68 +2,126 @@
 
 ## Project Overview
 
-Backend
-- Node.js
-- Express
-- MongoDB
-- JWT
-- Jest
+### Backend
 
-Frontend
-- React
-- Vite
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- JWT Authentication
+- bcryptjs
+- Jest
+- Supertest
+
+### Frontend
+
+- React (Vite)
 - Tailwind CSS
 - Axios
+- React Router
+- Context API
 
-Development Strategy
-- Test-Driven Development
-- REST API
-- Clean Architecture
+---
+
+## Development Strategy
+
+- Test-Driven Development (TDD)
+- RESTful API Design
+- Layered Architecture
+- Clean Architecture Principles
 - SOLID Principles (where applicable)
 
 ---
-## Milestone 0.2 – Backend Foundation
 
-### Dependencies
+# Milestone 0.2 – Backend Foundation
 
-Runtime:
+## Dependencies
+
+### Runtime
+
 - Express
 - Mongoose
-- Dotenv
-- BcryptJS
-- JSON Web Token
-- CORS
+- dotenv
+- bcryptjs
+- jsonwebtoken
+- cors
 
-Development:
-- Nodemon
-- Jest
-- Supertest
-- MongoDB Memory Server
+### Development
 
-### Design Decisions
+- nodemon
+- jest
+- supertest
+- mongodb-memory-server
 
-- Separated app.js and server.js to improve testability.
-- Using MongoDB Memory Server for isolated integration tests.
-- Keeping database connection logic in a dedicated config module.
+---
 
-## Development Process
+## Design Decisions
 
-Registration
-- Wrote registration endpoint test
-- Implemented minimum route (Green)
-- Added validation tests
-- Refactored to AuthController
-- Added AuthService
-- Added MongoDB persistence
-- Added duplicate email validation
-<<<<<<< HEAD
+- Separated `app.js` and `server.js` for better testability.
+- Used MongoDB Memory Server for isolated integration tests.
+- Kept database connection logic in a dedicated configuration module.
+- Adopted a layered architecture:
 
-Login Module
-Objective
+```
+Route
+   ↓
+Middleware
+   ↓
+Controller
+   ↓
+Service
+   ↓
+Model
+```
+
+---
+
+# Development Process
+
+## Feature 1 – User Registration
+
+### Objective
+
+Allow new customers to create an account securely.
+
+### Development Steps
+
+- Wrote registration integration tests first.
+- Implemented the minimum route (Green phase).
+- Added validation middleware.
+- Created `AuthController`.
+- Created `AuthService`.
+- Connected MongoDB persistence.
+- Added duplicate email validation.
+- Implemented password hashing using bcrypt.
+- Forced every new user to have the `customer` role.
+
+### Security
+
+- Passwords are hashed using bcrypt.
+- Duplicate email registration is prevented.
+- Password is never returned in API responses.
+
+### HTTP Status Codes
+
+| Code | Meaning |
+|------|---------|
+| 201 | User registered successfully |
+| 400 | Validation failed |
+| 409 | Email already exists |
+| 500 | Internal server error |
+
+---
+
+# Feature 2 – User Login
+
+### Objective
 
 Authenticate registered users and issue a JWT for accessing protected APIs.
 
-Request Flow
+### Request Flow
+
+```
 Client
    │
    ▼
@@ -80,45 +138,65 @@ Service
    │
    ▼
 MongoDB
-Steps
-Validate request.
-Find user by email.
-Compare password using bcrypt.
-Generate JWT.
-Return token and user details.
-Security
-Passwords are never returned.
-Invalid credentials return the same error message.
-JWT expires after 1 day.
-Password comparison uses bcrypt.
-HTTP Status Codes
-| Code | Meaning                   |
-| ---- | ------------------------- |
-| 200  | Login successful          |
-| 400  | Validation failed         |
-| 401  | Invalid email or password |
-| 500  | Internal server error     |
+```
 
-Libraries
--bcryptjs
--jsonwebtoken
--Jest
--Supertest
-=======
-## Registration Module
+### Development Steps
 
-### Learned
+- Wrote login integration tests first.
+- Added login validation middleware.
+- Retrieved user by email.
+- Compared passwords using bcrypt.
+- Generated JWT upon successful authentication.
+- Returned authenticated user details without the password.
 
-- Layered backend architecture
-- Service layer responsibilities
-- Request validation using middleware
-- Password hashing with bcrypt
-- MongoDB integration using Mongoose
-- Integration testing with Jest and Supertest
-- Duplicate email handling using HTTP 409 Conflict
+### Security
 
-### Challenges
+- Passwords are never returned.
+- Invalid credentials always return the same error message.
+- JWT expires after 1 day.
+- Password comparison uses bcrypt.
 
-- Jest tests timed out because MongoDB was not connected during test execution.
-- Fixed by creating a Jest setup file that establishes and closes the database connection.
->>>>>>> feature/auth
+### HTTP Status Codes
+
+| Code | Meaning |
+|------|---------|
+| 200 | Login successful |
+| 400 | Validation failed |
+| 401 | Invalid email or password |
+| 500 | Internal server error |
+
+### Libraries Used
+
+- bcryptjs
+- jsonwebtoken
+- Jest
+- Supertest
+
+---
+
+# Next Milestone
+
+## JWT Authentication Middleware
+
+### Goal
+
+Protect private APIs using JWT authentication.
+
+### Planned Responsibilities
+
+- Validate Authorization header.
+- Verify JWT token.
+- Reject missing or invalid tokens.
+- Attach authenticated user information to `req.user`.
+- Reuse middleware across all protected routes.
+
+---
+
+# Future Features
+
+- Vehicle CRUD APIs
+- Vehicle Search & Filtering
+- Admin Dashboard
+- Customer Dashboard
+- Role-Based Authorization
+- Vehicle Purchase Workflow
