@@ -56,3 +56,19 @@ Registration
 - Added AuthService
 - Added MongoDB persistence
 - Added duplicate email validation
+## Registration Module
+
+### Learned
+
+- Layered backend architecture
+- Service layer responsibilities
+- Request validation using middleware
+- Password hashing with bcrypt
+- MongoDB integration using Mongoose
+- Integration testing with Jest and Supertest
+- Duplicate email handling using HTTP 409 Conflict
+
+### Challenges
+
+- Jest tests timed out because MongoDB was not connected during test execution.
+- Fixed by creating a Jest setup file that establishes and closes the database connection.

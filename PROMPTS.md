@@ -23,3 +23,19 @@ Set up the backend project structure.
 - Set up Jest for testing.
 - Added environment configuration.
 - Prepared the project for future feature development.
+
+## Feature: User Registration
+
+### Prompt
+
+Help me implement user registration using Test Driven Development (TDD) for an Express and MongoDB backend.
+
+Requirements:
+- Validate name, email, and password.
+- Password must be at least 6 characters.
+- Prevent duplicate email registration.
+- Hash passwords using bcrypt.
+- Store users in MongoDB using Mongoose.
+- Always assign the customer role regardless of client input.
+- Follow a layered architecture (Route → Middleware → Controller → Service → Model).
+- Write integration tests with Jest and Supertest before implementing functionality.

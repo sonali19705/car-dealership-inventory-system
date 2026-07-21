@@ -86,7 +86,16 @@ This project follows:
 
 - ✅ Project setup completed
 - ✅ Backend foundation configured
-- ⏳ Authentication module in progress
+- ## Features
+
+### Authentication
+
+- User Registration
+- Input validation
+- Duplicate email prevention
+- Password hashing using bcrypt
+- Customer role assigned by default
+- Integration tests using Jest and Supertest
 
 ---
 
@@ -106,3 +115,15 @@ This project follows:
 ### Reflection
 
 AI acted as a development assistant for brainstorming, design discussions, and code review. I verified all suggestions, implemented the final solution myself, and ensured I understood every design decision before including it in the project.
+
+AI tools were used as development assistants throughout the project.
+
+- **ChatGPT**
+  - Discussed software architecture and design decisions.
+  - Reviewed TDD workflow and testing strategy.
+  - Helped refine validation and backend implementation.
+
+- **GitHub Copilot**
+  - Assisted with code completion while implementing features.
+
+All code was reviewed, understood, tested, and modified as needed before being committed.
