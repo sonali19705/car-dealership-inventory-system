@@ -156,3 +156,19 @@ Requirements:
 - Allow only admin users
 - Return HTTP 403 for unauthorized users
 - Write Jest unit tests
+
+## Prompt 9 – Create Vehicle API using TDD
+
+Implement the Create Vehicle feature for the Car Dealership Inventory Management System using Test-Driven Development (TDD).
+
+Requirements:
+- Endpoint: POST /api/vehicles
+- Admin-only access using JWT authentication and role-based authorization.
+- Follow the project architecture:
+  Route → Validation Middleware → Controller → Service → Model.
+- Validate:
+  - make (required)
+  - model (required)
+  - category (required)
+  - price (required, numeric, >= 0)
+  - quantity (required, numeric, >= 0)

@@ -36,8 +36,11 @@ const searchVehicles = async (queryParams) => {
 
     return Vehicle.find(query);
 };
-
+const createVehicle = async (vehicleData) => {
+    return await Vehicle.create(vehicleData);
+};
 module.exports = {
     getAllVehicles,
     searchVehicles,
+    createVehicle,
 };

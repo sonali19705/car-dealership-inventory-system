@@ -126,10 +126,17 @@ This project follows:
 - Vehicle Search API
 - JWT Authentication Middleware
 - Admin Authorization Middleware
+## Vehicle APIs
 
+### Public
+- GET /api/vehicles
+- GET /api/vehicles/search
+
+### Admin
+- POST /api/vehicles
 ### 🚧 In Progress
 
-- Vehicle Create API
+-
 
 ### 📌 Planned
 
