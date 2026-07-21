@@ -119,16 +119,16 @@ This project follows:
 - User Registration
 - User Login
 - JWT generation
-- Validation middleware
 - Password hashing
 - Integration tests using Jest and Supertest
 - Vehicle Model
 - Get All Vehicles API
 - Vehicle Search API
+- JWT Authentication Middleware
+- Admin Authorization Middleware
 
 ### 🚧 In Progress
 
-- JWT Authentication Middleware
 - Vehicle Create API
 
 ### 📌 Planned
@@ -146,14 +146,12 @@ This project follows:
 
 This project follows a **Test-Driven Development (TDD)** workflow.
 
-Current test coverage includes:
-
 - Registration API
 - Login API
-- Validation middleware
-- Password hashing
-- Duplicate email handling
-- Authentication success and failure scenarios
+- Get All Vehicles API
+- Search Vehicles API
+- JWT Authentication Middleware
+- Admin Authorization Middleware
 
 ### Testing Tools
 

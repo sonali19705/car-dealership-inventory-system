@@ -126,3 +126,33 @@ Requirements:
 - Allow combining multiple filters.
 - Use MongoDB dynamic query building.
 - Write integration tests for each search scenario.
+
+# Prompt 7 – JWT Authentication Middleware
+
+## Prompt
+
+Help me implement JWT Authentication Middleware using Test-Driven Development.
+
+Requirements:
+
+- Validate Authorization header
+- Verify Bearer token
+- Verify JWT
+- Attach decoded user to req.user
+- Return proper HTTP status codes
+- Write Jest unit tests
+
+---
+
+# Prompt 8 – Admin Authorization Middleware
+
+## Prompt
+
+Help me implement Admin Authorization Middleware using Test-Driven Development.
+
+Requirements:
+
+- Check authenticated user's role
+- Allow only admin users
+- Return HTTP 403 for unauthorized users
+- Write Jest unit tests
