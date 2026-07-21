@@ -1,0 +1,16 @@
+const vehicleService = require("../services/vehicleService");
+
+const getAllVehicles = async (req, res) => {
+    try {
+        const vehicles = await vehicleService.getAllVehicles();
+        return res.status(200).json(vehicles);
+    } catch (error) {
+        return res.status(500).json({
+            message: "Internal server error"
+        });
+    }
+};
+
+module.exports = {
+    getAllVehicles
+};
