@@ -110,45 +110,24 @@ This project follows:
 
 ---
 
-## Current Progress
+## Features
 
-### ✅ Completed
+### Authentication
+- ✅ Register
+- ✅ Login
+- ✅ JWT Authentication
+- ✅ Admin Authorization
 
-- Backend project setup
-- MongoDB connection
-- User Registration
-- User Login
-- JWT generation
-- Password hashing
-- Integration tests using Jest and Supertest
-- Vehicle Model
-- Get All Vehicles API
-- Vehicle Search API
-- JWT Authentication Middleware
-- Admin Authorization Middleware
-## Vehicle APIs
+### Vehicle Management
+- ✅ Get All Vehicles
+- ✅ Search Vehicles
+- ✅ Create Vehicle
+- ✅ Update Vehicle
+- ✅ Delete Vehicle
 
-### Public
-- GET /api/vehicles
-- GET /api/vehicles/search
-
-### Admin
-- POST /api/vehicles
-### 🚧 In Progress
-
--
-
-### 📌 Planned
-
-- Vehicle CRUD APIs
-- Inventory Search & Filter
-- Admin Dashboard
-- Customer Dashboard
-- Frontend Authentication
-- Purchase Workflow
-
----
-
+### Inventory
+- ⏳ Purchase Vehicle
+- ⏳ Restock Vehicle
 ## Testing
 
 This project follows a **Test-Driven Development (TDD)** workflow.
@@ -166,6 +145,14 @@ This project follows a **Test-Driven Development (TDD)** workflow.
 - Supertest
 
 ---
+### API table:
+| Method | Endpoint             | Access |
+| ------ | -------------------- | ------ |
+| GET    | /api/vehicles        | Public |
+| GET    | /api/vehicles/search | Public |
+| POST   | /api/vehicles        | Admin  |
+| PUT    | /api/vehicles/:id    | Admin  |
+| DELETE | /api/vehicles/:id    | Admin  |
 
 ## My AI Usage
 
