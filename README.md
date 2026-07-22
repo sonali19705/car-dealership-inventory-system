@@ -170,6 +170,19 @@ This project follows a **Test-Driven Development (TDD)** workflow.
 | POST     | `/api/vehicles/:id/purchase`| Authenticated User     | Purchase a vehicle and decrease stock     |
 | POST     | `/api/vehicles/:id/restock` | Admin                  | Restock vehicle                           |
 
+## Frontend Setup
+
+### Tech Stack
+
+- React (Vite)
+- React Router DOM
+- Axios
+- Tailwind CSS
+
+### Project Structure
+
+The frontend follows a modular structure with separate folders for pages, components, services, context, hooks, routes, and utilities to improve maintainability and scalability.
+
 ## My AI Usage
 
 ### AI Tools Used

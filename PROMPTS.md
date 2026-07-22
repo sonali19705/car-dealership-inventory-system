@@ -244,3 +244,14 @@ Requirements:
 - Follow Test-Driven Development (TDD).
 - Generate comprehensive Jest and Supertest test cases for successful restocking, invalid quantity, vehicle not found, unauthorized access, forbidden access, and database error scenarios.
 - Maintain consistency with the existing project architecture and coding style.
+
+### Prompt 14 
+Set up the React frontend for the Car Dealership Inventory Management System using Vite.
+
+Requirements:
+- Install React Router DOM.
+- Install Axios.
+- Configure Tailwind CSS.
+- Create a scalable folder structure including pages, components, services, context, hooks, routes, and utils.
+- Configure a centralized Axios instance with a base URL and JWT interceptor.
+- Prepare the project for implementing authentication and vehicle management features.
