@@ -4,7 +4,7 @@ import {
   APP_TAGLINE,
 } from "../../utils/constants";
 
-export default function Logo() {
+export default function Logo({ compact = false }) {
   return (
     <div className="flex items-center gap-3">
 

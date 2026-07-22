@@ -1,68 +1,136 @@
-# Car Dealership Inventory Management System
+# 🚗 Car Dealership Inventory Management System
 
-## Overview
+A full-stack Car Dealership Inventory Management System built using **React**, **Node.js**, **Express**, and **MongoDB**.
 
-A full-stack web application for managing a car dealership's inventory. The system provides role-based access for administrators and customers, allowing inventory management, vehicle browsing, authentication, and purchase workflows.
+The application supports secure authentication, role-based access control, inventory management, vehicle purchasing, and search functionality while following **Test-Driven Development (TDD)** practices.
 
-This project is being developed using **Test-Driven Development (TDD)** as part of the **Incubyte Software Craftsman Internship Assessment**.
-
----
-
-## Features
-
-### Authentication
-
-- User Registration
-- Secure User Login
-- JWT-based Authentication
-- Password hashing using bcrypt
-- Input validation using middleware
-- Duplicate email prevention
-- Default customer role assignment
-- Integration testing using Jest and Supertest
-
-### Planned Features
-
-- Vehicle Inventory Management (Admin)
-- Vehicle Search & Filtering
-- Customer Dashboard
-- Admin Dashboard
-- Protected Routes
-- Role-Based Authorization
-- Vehicle Purchase Workflow
+Developed as part of the **Incubyte Software Craftsman Internship Assessment**.
 
 ---
 
-## Tech Stack
+# ✨ Features
 
-### Backend
+## Authentication
 
-- Node.js
-- Express.js
-- MongoDB
-- Mongoose
-- JWT Authentication
-- bcryptjs
-- Jest
-- Supertest
+- ✅ User Registration
+- ✅ User Login
+- ✅ JWT Authentication
+- ✅ Password Hashing (bcrypt)
+- ✅ Protected Routes
+- ✅ Persistent Login
+- ✅ Role-Based Authorization
 
-### Frontend
+## Admin Features
+
+- ✅ Add Vehicle
+- ✅ Update Vehicle
+- ✅ Delete Vehicle
+- ✅ Restock Vehicle
+- ✅ Dashboard Statistics
+- ✅ Vehicle Search & Filtering
+
+## Customer Features
+
+- ✅ Browse Vehicles
+- ✅ Search & Filter Vehicles
+- ✅ Purchase Vehicle
+- ✅ Automatic Stock Updates
+- ✅ Disabled Purchase Button for Out-of-Stock Vehicles
+
+## Inventory
+
+- ✅ View Inventory
+- ✅ Search by Make
+- ✅ Search by Model
+- ✅ Search by Category
+- ✅ Search by Price Range
+
+---
+
+# 🛠 Tech Stack
+
+## Frontend
 
 - React (Vite)
 - Tailwind CSS
-- React Router
+- React Router DOM
 - Axios
 - Context API
 
+## Backend
+
+- Node.js
+- Express.js
+- MongoDB Atlas
+- Mongoose
+- JWT
+- bcryptjs
+
+## Testing
+
+- Jest
+- Supertest
+
 ---
 
-## Project Structure
+# 🏗 Architecture
 
-```text
-car-dealership-inventory/
+The backend follows a layered architecture:
+
+```
+Route
+   ↓
+Middleware
+   ↓
+Controller
+   ↓
+Service
+   ↓
+Model
+   ↓
+MongoDB
+```
+
+Frontend architecture:
+
+```
+Pages
+   ↓
+Components
+   ↓
+Services
+   ↓
+API
+```
+
+---
+
+# 📁 Project Structure
+
+```
+car-dealership-inventory
 │
-├── backend/
-├── frontend/
+├── backend
+│   ├── controllers
+│   ├── middleware
+│   ├── models
+│   ├── routes
+│   ├── services
+│   ├── tests
+│   └── app.js
+│
+├── frontend
+│   ├── components
+│   │   ├── admin
+│   │   ├── common
+│   │   ├── layout
+│   │   └── vehicle
+│   ├── context
+│   ├── pages
+│   ├── routes
+│   ├── services
+│   └── utils
+│
 ├── README.md
 ├── PROMPTS.md
 └── .gitignore
@@ -70,24 +138,41 @@ car-dealership-inventory/
 
 ---
 
-## Getting Started
+# 🚀 Getting Started
 
-### Clone Repository
+## Clone Repository
 
 ```bash
 git clone <repository-url>
 cd car-dealership-inventory
 ```
 
-### Backend Setup
+---
+
+## Backend Setup
 
 ```bash
 cd backend
 npm install
+```
+
+Create a `.env` file.
+
+```env
+PORT=5000
+MONGODB_URI=<your_mongodb_connection_string>
+JWT_SECRET=<your_secret_key>
+```
+
+Run the backend:
+
+```bash
 npm run dev
 ```
 
-### Frontend Setup
+---
+
+## Frontend Setup
 
 ```bash
 cd frontend
@@ -97,181 +182,291 @@ npm run dev
 
 ---
 
-## Development Approach
+# 🔑 Demo Credentials
 
-This project follows:
+## Admin
 
-- Test-Driven Development (TDD)
-- Feature-based development
-- Git feature branches
-- Incremental commits
-- Clean architecture principles
-- Layered Architecture (Route → Middleware → Controller → Service → Model)
+```
+Email:
+Password:
+```
+
+## Customer
+
+```
+Email:
+Password:
+```
 
 ---
 
-## Features
+# 📡 REST API
 
-### Authentication
+| Method | Endpoint | Access |
+|---------|----------|--------|
+| POST | `/api/auth/register` | Public |
+| POST | `/api/auth/login` | Public |
+| GET | `/api/vehicles` | Public |
+| GET | `/api/vehicles/search` | Public |
+| POST | `/api/vehicles` | Admin |
+| PUT | `/api/vehicles/:id` | Admin |
+| DELETE | `/api/vehicles/:id` | Admin |
+| POST | `/api/vehicles/:id/purchase` | Authenticated |
+| POST | `/api/vehicles/:id/restock` | Admin |
+
+---
+
+# 🧪 Testing
+
+This project follows a **Test-Driven Development (TDD)** approach using **Jest** and **Supertest**. Tests were written to validate the application's core backend functionality, authentication, authorization, and inventory workflows.
+
+### Tested Features
+
 - ✅ User Registration
 - ✅ User Login
-- ✅ JWT Authentication
-- ✅ Role-based Authorization (Admin)
-
-### Vehicle Management
+- ✅ JWT Authentication Middleware
+- ✅ Admin Authorization Middleware
 - ✅ Add Vehicle
-- ✅ View All Vehicles
+- ✅ Get All Vehicles
 - ✅ Search Vehicles
 - ✅ Update Vehicle
-- ✅ Delete Vehicle (Admin Only)
-
-### Inventory Management
+- ✅ Delete Vehicle
 - ✅ Purchase Vehicle
-- ✅ Restock Vehicle (Admin Only)
-
-### Testing
-- ✅ Jest
-- ✅ Supertest
-- ✅ Test-Driven Development (TDD)
-
-### Security
-- ✅ Password Hashing (bcrypt)
-- ✅ JWT Authentication
-- ✅ Protected Routes
-- ✅ Role-Based Access Control
-
-## Testing
-
-This project follows a **Test-Driven Development (TDD)** workflow.
-
-- Registration API
-- Login API
-- Get All Vehicles API
-- Search Vehicles API
-- JWT Authentication Middleware
-- Admin Authorization Middleware
+- ✅ Restock Vehicle
 
 ### Testing Tools
 
 - Jest
 - Supertest
 
----
-### API table:
-| Method   | Endpoint                         | Access                 | Description                               |
-| -------- | -------------------------------- | ---------------------- | ----------------------------------------- |
-| POST     | `/api/auth/register`        | Public                 | Register a new user                       |
-| POST     | `/api/auth/login`           | Public                 | Login and receive JWT                     |
-| GET      | `/api/vehicles`             | Public                 | Get all vehicles                          |
-| GET      | `/api/vehicles/search`      | Public                 | Search vehicles                           |
-| POST     | `/api/vehicles`             | Admin                  | Add a vehicle                             |
-| PUT      | `/api/vehicles/:id`         | Admin                  | Update vehicle                            |
-| DELETE   | `/api/vehicles/:id`         | Admin                  | Delete vehicle                            |
-| POST     | `/api/vehicles/:id/purchase`| Authenticated User     | Purchase a vehicle and decrease stock     |
-| POST     | `/api/vehicles/:id/restock` | Admin                  | Restock vehicle                           |
+### Run Tests
 
-## Frontend Setup
+```bash
+npm test
+```
 
-### Tech Stack
+# 🧪 Testing
 
-- React 19
-- Vite
-- React Router DOM
-- Axios
-- Tailwind CSS
-- Context API
+This project follows a **Test-Driven Development (TDD)** approach using **Jest** and **Supertest**. Unit and integration tests were written to verify the core functionality of the application.
 
-### Project Structure
+### Tested Modules
 
-The frontend follows a modular structure with separate folders for pages, components, services, context, hooks, routes, and utilities to improve maintainability and scalability.
-frontend/
-│
-├── components/
-│   ├── common/
-│   ├── admin/
-│   ├── layout/
-│   └── vehicle/
-│
-├── context/
-├── hooks/
-├── pages/
-├── routes/
-├── services/
-├── utils/
-
-## Frontend Features
-
-### Authentication
+#### Authentication
 - ✅ User Registration
 - ✅ User Login
-- ✅ JWT Authentication
-- ✅ Protected Routes
-- ✅ Persistent Authentication
-- ✅ Logout Support
 
-### UI
-- ✅ React + Vite
-- ✅ Tailwind CSS
-- ✅ Responsive Authentication Pages
-- ✅ Reusable UI Components
-- ✅ Context API for Authentication
+#### Vehicle Management
+- ✅ Create Vehicle
+- ✅ Get All Vehicles
+- ✅ Search Vehicles
+- ✅ Update Vehicle
+- ✅ Delete Vehicle
 
-## My AI Usage
+#### Inventory Management
+- ✅ Purchase Vehicle
+- ✅ Restock Vehicle
 
-### AI Tools Used
+#### Middleware
+- ✅ JWT Authentication Middleware
+- ✅ Admin Authorization Middleware
+
+### Testing Tools
+
+- Jest
+- Supertest
+
+### Run Tests
+
+```bash
+npm test
+```
+
+# 🧪 Testing
+
+This project follows a **Test-Driven Development (TDD)** approach using **Jest** and **Supertest**. Unit and integration tests were written before or alongside implementation to validate the application's core functionality.
+
+### Tested Modules
+
+#### Authentication
+- ✅ User Registration
+- ✅ User Login
+
+#### Vehicle Management
+- ✅ Create Vehicle
+- ✅ Get All Vehicles
+- ✅ Search Vehicles
+- ✅ Update Vehicle
+- ✅ Delete Vehicle
+
+#### Inventory Management
+- ✅ Purchase Vehicle
+- ✅ Restock Vehicle
+
+#### Middleware
+- ✅ JWT Authentication Middleware
+- ✅ Admin Authorization Middleware
+
+### Testing Tools
+
+- Jest
+- Supertest
+
+### Run Tests
+
+```bash
+npm test
+```
+
+### Test Results
+
+```text
+Test Suites: 11 passed, 11 total
+Tests:       59 passed, 59 total
+Snapshots:   0 total
+Time:        72.782 s
+```
+
+### Code Coverage
+
+| Metric | Coverage |
+|--------|---------:|
+| Statements | **97.28%** |
+| Branches | **97.50%** |
+| Functions | **100%** |
+| Lines | **97.28%** |
+
+### Coverage Summary
+
+- ✅ 11 Test Suites Passed
+- ✅ 59 Test Cases Passed
+- ✅ 97.28% Statement Coverage
+- ✅ 97.50% Branch Coverage
+- ✅ 100% Function Coverage
+- ✅ Authentication, Authorization, Vehicle Management, Inventory Operations, and Middleware thoroughly tested.
+
+### Test Report Screenshot
+
+![Test Report](screenshots/test-report.png)
+
+# 📷 Screenshots
+
+## Login Page
+
+![Login Page](screenshots/login.png)
+
+---
+
+## Register Page
+
+![Register Page](screenshots/register.png)
+
+---
+
+## Admin Dashboard
+
+Shows dashboard statistics, vehicle inventory, search filters, and admin actions.
+
+![Admin Dashboard](screenshots/admin-dashboard.png)
+
+---
+
+## Customer Dashboard
+
+Browse, search, and purchase available vehicles.
+
+![Customer Dashboard](screenshots/customer-dashboard.png)
+
+---
+
+## Add / Edit Vehicle
+
+Admin interface for adding and updating vehicle details.
+
+![Add Vehicle](screenshots/add-vehicle-modal.png)
+
+---
+
+## Vehicle Search & Filtering
+
+Search vehicles by make, model, category, and price range.
+
+![Search Vehicles](screenshots/search-filter.png)
+
+---
+
+## Purchase Workflow
+
+Customer successfully purchases a vehicle and inventory updates automatically.
+
+![Purchase Vehicle](screenshots/purchase-success.png)
+
+---
+
+# 🌐 Deployment (Optional)
+
+## Live Application
+
+![Home Page](screenshots/home-page.png)
+Frontend:
+
+```
+Vercel URL
+```
+
+Backend:
+
+```
+Render URL
+```
+
+---
+
+# 🤖 My AI Usage
+
+## AI Tools Used
 
 - ChatGPT (GPT-5.5)
 - GitHub Copilot
 
-### How I Used AI
-
-- Discussed software architecture and folder structure.
-- Planned backend setup and dependency selection.
-- Followed a Test-Driven Development (TDD) workflow.
-- Reviewed design decisions and edge cases.
-- Discussed testing strategy and API design.
-- Used GitHub Copilot for code completion during implementation.
-### Purchase Vehicle API
+## How AI Was Used
 
 ChatGPT assisted with:
 
-- Designing the purchase workflow
-- Test-Driven Development (TDD) planning
-- Generating initial controller and service boilerplate
-- Suggesting Jest and Supertest test cases
-- Reviewing API design and error handling
+- Application architecture
+- Folder structure planning
+- Test-Driven Development planning
+- Backend API design
+- Authentication flow
+- Vehicle CRUD design
+- Purchase workflow
+- Restock workflow
+- Search implementation
+- React component design
+- Responsive UI improvements
+- Error handling
+- Testing strategy
+- README preparation
 
-All generated code was manually reviewed, understood, modified where necessary, and tested before being committed.
-### Restock Vehicle API
+GitHub Copilot assisted with:
 
-ChatGPT assisted with:
+- Code completion
+- Repetitive boilerplate generation
+- Refactoring suggestions
 
-- Designing the inventory restocking workflow
-- Planning the Test-Driven Development (TDD) approach
-- Generating the initial controller, service, and route structure
-- Suggesting comprehensive Jest and Supertest test cases
-- Reviewing error handling, authorization, and code organization
+All AI-generated code and suggestions were manually reviewed, understood, modified where necessary, and tested before being committed.
 
-All generated code was manually reviewed, understood, modified where necessary, and thoroughly tested before being committed.
+## Reflection
 
-### Frontend Authentication
-
-ChatGPT assisted with:
-
-- Planning the frontend architecture
-- Designing reusable React component structure
-- Creating authentication flow using Context API
-- Designing responsive Login and Register pages
-- Reviewing folder organization and routing strategy
-- Suggesting reusable service layer and API integration
-
-All generated code was manually reviewed, understood, modified where necessary, and tested before being committed.
-### Reflection
-
-AI acted as a development assistant for brainstorming, architecture discussions, testing strategy, and code review. GitHub Copilot assisted with code completion. I reviewed, understood, tested, and modified all AI-generated suggestions before including them in the project.
+AI accelerated boilerplate generation, architectural discussions, and testing strategy while allowing me to focus on implementation and debugging. Every AI suggestion was critically reviewed and validated before becoming part of the project.
 
 ---
 
-## License
+# 📄 PROMPTS.md
 
-This project was developed as part of the **Incubyte Software Craftsman Internship Assessment**.
+The repository includes a **PROMPTS.md** file containing the AI prompts used throughout the development process, as required by the assessment.
+
+---
+
+# 📜 License
+
+Developed for the **Incubyte Software Craftsman Internship Assessment**.
