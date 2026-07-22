@@ -87,6 +87,7 @@ export default function Login() {
 
         <Button
           type="submit"
+          className="w-full"
           disabled={loading}
         >
           {loading ? (

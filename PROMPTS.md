@@ -1,282 +1,158 @@
 # PROMPTS.md
 
-This document contains the major prompts used during the development of the project.
+# AI Prompt History
+
+This document summarizes the major AI-assisted prompts used during the development of the **Car Dealership Inventory Management System**.
+
+AI was used as a development assistant for architecture discussions, Test-Driven Development (TDD) planning, implementation guidance, debugging, code review, and documentation. All AI-generated suggestions were manually reviewed, understood, modified where necessary, and tested before being included in the project.
 
 ---
 
-# Prompt 1 – Project Planning
+## Prompt 1 – Project Planning
 
-## Purpose
+**Purpose**
 
-Project planning and development approach.
+Plan the project architecture and development workflow.
 
-### Prompt
+**Summary**
 
-> Act as a Senior Software Engineer and TDD mentor. Guide me in building this project incrementally using Test-Driven Development (TDD), clean architecture, REST API best practices, and industry-standard coding practices. Explain design decisions before implementation, help review my code, and suggest improvements.
-
----
-
-# Prompt 2 – Backend Foundation
-
-## Purpose
-
-Set up the backend project structure.
-
-### Prompt
-
-> Help me configure the backend foundation for an Express.js application. Recommend a clean folder structure, required dependencies, environment configuration, testing setup, and project organization suitable for a production-ready application.
-
-### Outcome
-
-- Configured Express project structure.
-- Selected runtime and development dependencies.
-- Set up Jest for testing.
-- Added environment configuration.
-- Prepared the project for future feature development.
+- Planned the overall project structure.
+- Selected the technology stack.
+- Defined the TDD workflow.
+- Discussed clean architecture and REST API design.
 
 ---
 
-# Prompt 3 – User Registration
+## Prompt 2 – Backend Setup
 
-## Purpose
+**Purpose**
 
-Implement user registration using Test-Driven Development (TDD).
+Set up the Express.js backend.
 
-### Prompt
+**Summary**
 
-> Help me implement user registration using Test-Driven Development (TDD) for an Express.js and MongoDB backend.
-
-Requirements:
-
-- Validate name, email, and password.
-- Password must be at least 6 characters.
-- Prevent duplicate email registration.
-- Hash passwords using bcrypt.
-- Store users in MongoDB using Mongoose.
-- Always assign the customer role regardless of client input.
-- Follow the layered architecture:
-  - Route
-  - Middleware
-  - Controller
-  - Service
-  - Model
-- Write integration tests using Jest and Supertest before implementation.
+- Designed the folder structure.
+- Configured Express, MongoDB, and environment variables.
+- Set up Jest and Supertest.
+- Established the Route → Middleware → Controller → Service → Model architecture.
 
 ---
 
-# Prompt 4 – User Login
+## Prompt 3 – Authentication
 
-## Purpose
+**Purpose**
 
-Implement secure user login using Test-Driven Development (TDD).
+Implement secure user authentication.
 
-### Prompt
+**Summary**
 
-> Help me implement a secure login API using Test-Driven Development (TDD).
-
-Requirements:
-
-- Validate email and password.
-- Find the user by email.
-- Compare passwords using bcrypt.
-- Return **401 Unauthorized** for invalid credentials.
-- Generate a JWT after successful authentication.
-- Return authenticated user details without the password.
-- Follow the layered architecture:
-  - Route
-  - Middleware
-  - Controller
-  - Service
-  - Model
-- Write integration tests using Jest and Supertest before implementation.
-
-# Prompt 5 – Get All Vehicles
-
-## Purpose
-
-Implement the first Vehicle API using TDD.
-
-### Prompt
-
-> Help me implement the GET /api/vehicles endpoint using Test-Driven Development (TDD).
-
-Requirements:
-
-- Return all vehicles from MongoDB.
-- Follow Route → Middleware → Controller → Service → Model architecture.
-- Write integration tests before implementation.
-- Return HTTP 200 with an empty array when no vehicles exist.
-
-# Prompt 6 – Search Vehicles
-
-## Purpose
-
-Implement the vehicle search API using Test-Driven Development (TDD).
-
-### Prompt
-
-> Help me implement the GET /api/vehicles/search endpoint using Test-Driven Development (TDD).
-
-Requirements:
-
-- Support searching by make.
-- Support searching by model.
-- Support searching by category.
-- Support searching by minimum and maximum price.
-- Allow combining multiple filters.
-- Use MongoDB dynamic query building.
-- Write integration tests for each search scenario.
-
-# Prompt 7 – JWT Authentication Middleware
-
-## Prompt
-
-Help me implement JWT Authentication Middleware using Test-Driven Development.
-
-Requirements:
-
-- Validate Authorization header
-- Verify Bearer token
-- Verify JWT
-- Attach decoded user to req.user
-- Return proper HTTP status codes
-- Write Jest unit tests
+- Planned user registration and login.
+- Designed JWT-based authentication.
+- Discussed password hashing with bcrypt.
+- Generated TDD test scenarios.
 
 ---
 
-# Prompt 8 – Admin Authorization Middleware
+## Prompt 4 – Vehicle Management APIs
 
-## Prompt
+**Purpose**
 
-Help me implement Admin Authorization Middleware using Test-Driven Development.
+Implement vehicle inventory management.
 
-Requirements:
+**Summary**
 
-- Check authenticated user's role
-- Allow only admin users
-- Return HTTP 403 for unauthorized users
-- Write Jest unit tests
+- Planned CRUD APIs for vehicles.
+- Designed validation and authorization flow.
+- Generated test cases for each endpoint.
+- Reviewed API design and error handling.
 
-## Prompt 9 – Create Vehicle API using TDD
+---
 
-Implement the Create Vehicle feature for the Car Dealership Inventory Management System using Test-Driven Development (TDD).
+## Prompt 5 – Inventory Management
 
-Requirements:
-- Endpoint: POST /api/vehicles
-- Admin-only access using JWT authentication and role-based authorization.
-- Follow the project architecture:
-  Route → Validation Middleware → Controller → Service → Model.
-- Validate:
-  - make (required)
-  - model (required)
-  - category (required)
-  - price (required, numeric, >= 0)
-  - quantity (required, numeric, >= 0)
+**Purpose**
 
-### Prompt 10
-Implement a secure PUT /api/vehicles/:id endpoint for the Car Dealership Inventory Management System using Node.js, Express, MongoDB, and Mongoose.
+Implement purchase and restock workflows.
 
-Follow the existing project architecture:
-Route → Validation Middleware → Controller → Service → Model.
+**Summary**
 
-Requirements:
-- Only authenticated admin users can update vehicles.
-- Reuse the existing vehicle validation middleware.
-- Return 404 if the vehicle does not exist.
-- Return the updated vehicle.
-- Handle errors gracefully with appropriate HTTP status codes.
-- Follow strict but pragmatic TDD.
-- Generate comprehensive Jest and Supertest test cases for success, validation, authorization, not found, and server error scenarios.
-- Do not modify the existing project architecture.
+- Planned inventory update logic.
+- Designed purchase and restock APIs.
+- Reviewed edge cases and business rules.
+- Generated Jest and Supertest test scenarios.
 
-### Prompt 11
-Implement a secure DELETE /api/vehicles/:id endpoint for the Car Dealership Inventory Management System using Node.js, Express, MongoDB, and Mongoose.
+---
 
-Follow the existing project architecture:
-Route → Controller → Service → Model.
+## Prompt 6 – Frontend Architecture
 
-Requirements:
-- Only authenticated admin users can delete vehicles.
-- Return 404 if the vehicle does not exist.
-- Return a success message after deletion.
-- Handle authorization and server errors appropriately.
-- Follow strict but pragmatic TDD.
-- Generate comprehensive Jest and Supertest test cases covering success, unauthorized access, forbidden access, vehicle not found, and server error scenarios.
-- Keep the implementation consistent with the existing project structure.
+**Purpose**
 
-### Prompt 12
-Implement a secure Purchase Vehicle API for the Car Dealership Inventory Management System.
+Set up the React frontend.
 
-Requirements:
-- Technology: Node.js, Express, MongoDB, and Mongoose.
-- Endpoint: POST /api/vehicles/:id/purchase.
-- Follow the existing project architecture:
-  Route → Authentication Middleware → Controller → Service → Model.
-- Only authenticated users should be allowed to purchase vehicles.
-- Retrieve the vehicle by ID.
-- Return 404 if the vehicle does not exist.
-- Return 400 if the vehicle is out of stock.
-- Decrease the vehicle quantity by one upon successful purchase.
-- Persist the updated quantity to the database.
-- Return the updated vehicle with a success message.
-- Keep controllers thin and place business logic in the service layer.
-- Follow Test-Driven Development (TDD).
-- Generate comprehensive Jest and Supertest test cases for successful purchase, vehicle not found, out-of-stock, unauthorized access, and database error scenarios.
-- Maintain consistency with the existing project architecture and coding style.
+**Summary**
 
+- Planned project structure.
+- Configured React Router, Axios, and Context API.
+- Designed reusable components.
+- Reviewed frontend architecture.
 
-### Prompt 13
-Implement a secure Restock Vehicle API for the Car Dealership Inventory Management System.
+---
 
-Requirements:
-- Technology: Node.js, Express, MongoDB, and Mongoose.
-- Endpoint: POST /api/vehicles/:id/restock.
-- Follow the existing project architecture:
-  Route → Authentication Middleware → Admin Middleware → Controller → Service → Model.
-- Only authenticated administrators should be allowed to restock vehicles.
-- Retrieve the vehicle by ID.
-- Return 404 if the vehicle does not exist.
-- Validate that the restock quantity is provided and greater than zero.
-- Increase the vehicle quantity by the provided amount.
-- Persist the updated quantity to the database.
-- Return the updated vehicle with a success message.
-- Keep controllers thin and place business logic in the service layer.
-- Follow Test-Driven Development (TDD).
-- Generate comprehensive Jest and Supertest test cases for successful restocking, invalid quantity, vehicle not found, unauthorized access, forbidden access, and database error scenarios.
-- Maintain consistency with the existing project architecture and coding style.
+## Prompt 7 – Frontend Features
 
-### Prompt 14 
-Set up the React frontend for the Car Dealership Inventory Management System using Vite.
+**Purpose**
 
-Requirements:
-- Install React Router DOM.
-- Install Axios.
-- Configure Tailwind CSS.
-- Create a scalable folder structure including pages, components, services, context, hooks, routes, and utils.
-- Configure a centralized Axios instance with a base URL and JWT interceptor.
-- Prepare the project for implementing authentication and vehicle management features.
+Implement the user interface.
 
-### Prompt 15
-Set up the frontend for the Car Dealership Inventory System using React, Vite, Tailwind CSS, React Router, Axios, and Context API.
+**Summary**
 
-Requirements:
-- Create a scalable folder structure.
-- Configure routing.
-- Create reusable UI components.
-- Implement authentication context.
-- Configure API services.
-- Prepare the project for customer and admin dashboards.
-- Keep the architecture modular and maintainable.
+- Planned authentication pages.
+- Designed Admin and Customer dashboards.
+- Reviewed reusable components.
+- Integrated frontend with backend APIs.
+- Improved responsiveness and user experience.
 
-### Prompt 16
-Implement responsive Login and Registration pages for the Car Dealership Inventory System.
+---
 
-Requirements:
-- Use React and Tailwind CSS.
-- Create reusable Input, Button, Alert, and PasswordInput components.
-- Implement authentication using Context API.
-- Connect to backend Register and Login APIs.
-- Store JWT securely.
-- Configure Protected Routes.
-- Maintain consistent design and responsive layout.
-- Review and refactor the implementation following clean code practices.
+## Prompt 8 – Testing & Debugging
+
+**Purpose**
+
+Validate application functionality.
+
+**Summary**
+
+- Reviewed failing test cases.
+- Debugged API and authentication issues.
+- Improved test coverage.
+- Verified application behavior through Jest and Supertest.
+
+---
+
+## Prompt 9 – Documentation
+
+**Purpose**
+
+Prepare the project for submission.
+
+**Summary**
+
+- Organized the README.
+- Documented APIs and project setup.
+- Summarized testing results.
+- Documented AI usage in a transparent manner.
+
+---
+
+# Summary
+
+AI was primarily used for:
+
+- Project planning
+- Software architecture discussions
+- Test-Driven Development (TDD) guidance
+- Code review and debugging
+- Test case generation
+- Documentation preparation
+
+AI served as a development assistant throughout the project. All implementation decisions, testing, debugging, and final code were manually reviewed, understood, modified where necessary, and validated before submission.
