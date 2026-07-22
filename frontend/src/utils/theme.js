@@ -15,7 +15,7 @@ export const COLORS = {
 
 export const BUTTON = {
   primary:
-    "w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-5 rounded-xl shadow-md transition-all duration-200 hover:shadow-lg disabled:opacity-60 disabled:cursor-not-allowed",
+  "inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-5 rounded-xl shadow-md transition-all duration-200 hover:shadow-lg disabled:opacity-60 disabled:cursor-not-allowed",
 
   secondary:
     "w-full bg-slate-200 hover:bg-slate-300 text-slate-800 font-semibold py-3 px-5 rounded-xl transition-all duration-200",

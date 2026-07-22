@@ -142,6 +142,7 @@ export default function Register() {
 
         <Button
           type="submit"
+          className="w-full"
           disabled={loading}
         >
           {loading ? (
