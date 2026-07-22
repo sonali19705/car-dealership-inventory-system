@@ -80,6 +80,34 @@ const purchaseVehicle = async (id) => {
     };
 };
 
+const restockVehicle = async (id, quantity) => {
+
+    const vehicle = await Vehicle.findById(id);
+
+    if (!vehicle) {
+        return {
+            status: 404,
+            message: "Vehicle not found"
+        };
+    }
+
+    if (!quantity || quantity <= 0) {
+        return {
+            status: 400,
+            message: "Quantity must be greater than 0"
+        };
+    }
+
+    vehicle.quantity += quantity;
+
+    await vehicle.save();
+
+    return {
+        status: 200,
+        vehicle
+    };
+};
+
 module.exports = {
     getAllVehicles,
     searchVehicles,
@@ -87,4 +115,5 @@ module.exports = {
     updateVehicle,
     deleteVehicle,
     purchaseVehicle,
+    restockVehicle,
 };

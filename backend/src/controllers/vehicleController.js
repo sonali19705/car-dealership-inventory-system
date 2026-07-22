@@ -101,7 +101,35 @@ const purchaseVehicle = async (req, res) => {
         });
     }
 };
+const restockVehicle = async (req, res) => {
 
+    try {
+
+        const result = await vehicleService.restockVehicle(
+            req.params.id,
+            req.body.quantity
+        );
+
+        if (result.status !== 200) {
+            return res.status(result.status).json({
+                message: result.message
+            });
+        }
+
+        return res.status(200).json({
+            message: "Vehicle restocked successfully",
+            vehicle: result.vehicle
+        });
+
+    } catch (error) {
+
+        return res.status(500).json({
+            message: "Internal server error"
+        });
+
+    }
+
+};
 module.exports = {
     getAllVehicles,
     searchVehicles,
@@ -109,4 +137,5 @@ module.exports = {
     updateVehicle,
     deleteVehicle,
     purchaseVehicle,
+    restockVehicle,
 };

@@ -223,3 +223,24 @@ Requirements:
 - Follow Test-Driven Development (TDD).
 - Generate comprehensive Jest and Supertest test cases for successful purchase, vehicle not found, out-of-stock, unauthorized access, and database error scenarios.
 - Maintain consistency with the existing project architecture and coding style.
+
+
+### Prompt 13
+Implement a secure Restock Vehicle API for the Car Dealership Inventory Management System.
+
+Requirements:
+- Technology: Node.js, Express, MongoDB, and Mongoose.
+- Endpoint: POST /api/vehicles/:id/restock.
+- Follow the existing project architecture:
+  Route → Authentication Middleware → Admin Middleware → Controller → Service → Model.
+- Only authenticated administrators should be allowed to restock vehicles.
+- Retrieve the vehicle by ID.
+- Return 404 if the vehicle does not exist.
+- Validate that the restock quantity is provided and greater than zero.
+- Increase the vehicle quantity by the provided amount.
+- Persist the updated quantity to the database.
+- Return the updated vehicle with a success message.
+- Keep controllers thin and place business logic in the service layer.
+- Follow Test-Driven Development (TDD).
+- Generate comprehensive Jest and Supertest test cases for successful restocking, invalid quantity, vehicle not found, unauthorized access, forbidden access, and database error scenarios.
+- Maintain consistency with the existing project architecture and coding style.

@@ -461,3 +461,48 @@ Testing:
 - Out of stock
 - Unauthorized access
 - Database error
+
+## Restock Vehicle API
+
+### Endpoint
+
+POST /api/vehicles/:id/restock
+
+### Access
+
+Admin Only (JWT Authentication Required)
+
+### Request Body
+
+{
+  "quantity": 5
+}
+
+### Business Rules
+
+- Vehicle must exist.
+- Restock quantity must be greater than zero.
+- Increase the current inventory by the provided quantity.
+- Save the updated vehicle.
+- Return the updated vehicle details.
+
+### Response
+
+200 OK
+
+{
+  "message": "Vehicle restocked successfully",
+  "vehicle": { ... }
+}
+
+### Error Responses
+
+400 - Invalid quantity
+
+401 - Unauthorized
+
+403 - Forbidden (Non-admin)
+
+404 - Vehicle not found
+
+500 - Internal Server Error

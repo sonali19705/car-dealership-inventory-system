@@ -127,7 +127,7 @@ This project follows:
 
 ### Inventory Management
 - ✅ Purchase Vehicle
-- ⏳ Restock Vehicle (Admin Only)
+- ✅ Restock Vehicle (Admin Only)
 
 ### Testing
 - ✅ Jest
@@ -196,7 +196,17 @@ ChatGPT assisted with:
 - Reviewing API design and error handling
 
 All generated code was manually reviewed, understood, modified where necessary, and tested before being committed.
+### Restock Vehicle API
 
+ChatGPT assisted with:
+
+- Designing the inventory restocking workflow
+- Planning the Test-Driven Development (TDD) approach
+- Generating the initial controller, service, and route structure
+- Suggesting comprehensive Jest and Supertest test cases
+- Reviewing error handling, authorization, and code organization
+
+All generated code was manually reviewed, understood, modified where necessary, and thoroughly tested before being committed.
 ### Reflection
 
 AI acted as a development assistant for brainstorming, architecture discussions, testing strategy, and code review. GitHub Copilot assisted with code completion. I reviewed, understood, tested, and modified all AI-generated suggestions before including them in the project.

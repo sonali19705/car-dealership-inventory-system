@@ -32,4 +32,11 @@ router.post(
     authMiddleware,
     vehicleController.purchaseVehicle
 );
+
+router.post(
+    "/:id/restock",
+    authMiddleware,
+    adminMiddleware,
+    vehicleController.restockVehicle
+);
 module.exports = router;
