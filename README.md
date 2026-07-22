@@ -113,21 +113,33 @@ This project follows:
 ## Features
 
 ### Authentication
-- ✅ Register
-- ✅ Login
+- ✅ User Registration
+- ✅ User Login
 - ✅ JWT Authentication
-- ✅ Admin Authorization
+- ✅ Role-based Authorization (Admin)
 
 ### Vehicle Management
-- ✅ Get All Vehicles
+- ✅ Add Vehicle
+- ✅ View All Vehicles
 - ✅ Search Vehicles
-- ✅ Create Vehicle
 - ✅ Update Vehicle
-- ✅ Delete Vehicle
+- ✅ Delete Vehicle (Admin Only)
 
-### Inventory
-- ⏳ Purchase Vehicle
-- ⏳ Restock Vehicle
+### Inventory Management
+- ✅ Purchase Vehicle
+- ✅ Restock Vehicle (Admin Only)
+
+### Testing
+- ✅ Jest
+- ✅ Supertest
+- ✅ Test-Driven Development (TDD)
+
+### Security
+- ✅ Password Hashing (bcrypt)
+- ✅ JWT Authentication
+- ✅ Protected Routes
+- ✅ Role-Based Access Control
+
 ## Testing
 
 This project follows a **Test-Driven Development (TDD)** workflow.
@@ -146,13 +158,17 @@ This project follows a **Test-Driven Development (TDD)** workflow.
 
 ---
 ### API table:
-| Method | Endpoint             | Access |
-| ------ | -------------------- | ------ |
-| GET    | /api/vehicles        | Public |
-| GET    | /api/vehicles/search | Public |
-| POST   | /api/vehicles        | Admin  |
-| PUT    | /api/vehicles/:id    | Admin  |
-| DELETE | /api/vehicles/:id    | Admin  |
+| Method   | Endpoint                         | Access                 | Description                               |
+| -------- | -------------------------------- | ---------------------- | ----------------------------------------- |
+| POST     | `/api/auth/register`        | Public                 | Register a new user                       |
+| POST     | `/api/auth/login`           | Public                 | Login and receive JWT                     |
+| GET      | `/api/vehicles`             | Public                 | Get all vehicles                          |
+| GET      | `/api/vehicles/search`      | Public                 | Search vehicles                           |
+| POST     | `/api/vehicles`             | Admin                  | Add a vehicle                             |
+| PUT      | `/api/vehicles/:id`         | Admin                  | Update vehicle                            |
+| DELETE   | `/api/vehicles/:id`         | Admin                  | Delete vehicle                            |
+| POST     | `/api/vehicles/:id/purchase`| Authenticated User     | Purchase a vehicle and decrease stock     |
+| POST     | `/api/vehicles/:id/restock` | Admin                  | Restock vehicle                           |
 
 ## My AI Usage
 
@@ -169,7 +185,28 @@ This project follows a **Test-Driven Development (TDD)** workflow.
 - Reviewed design decisions and edge cases.
 - Discussed testing strategy and API design.
 - Used GitHub Copilot for code completion during implementation.
+### Purchase Vehicle API
 
+ChatGPT assisted with:
+
+- Designing the purchase workflow
+- Test-Driven Development (TDD) planning
+- Generating initial controller and service boilerplate
+- Suggesting Jest and Supertest test cases
+- Reviewing API design and error handling
+
+All generated code was manually reviewed, understood, modified where necessary, and tested before being committed.
+### Restock Vehicle API
+
+ChatGPT assisted with:
+
+- Designing the inventory restocking workflow
+- Planning the Test-Driven Development (TDD) approach
+- Generating the initial controller, service, and route structure
+- Suggesting comprehensive Jest and Supertest test cases
+- Reviewing error handling, authorization, and code organization
+
+All generated code was manually reviewed, understood, modified where necessary, and thoroughly tested before being committed.
 ### Reflection
 
 AI acted as a development assistant for brainstorming, architecture discussions, testing strategy, and code review. GitHub Copilot assisted with code completion. I reviewed, understood, tested, and modified all AI-generated suggestions before including them in the project.

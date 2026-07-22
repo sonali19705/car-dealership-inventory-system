@@ -436,3 +436,73 @@ Endpoint
 Response
 Error Handling
 Tests
+
+## Purchase Vehicle API
+
+Endpoint:
+POST /api/vehicles/:id/purchase
+
+Access:
+Authenticated Users
+
+Description:
+Allows an authenticated user to purchase a vehicle by reducing the available stock by one.
+
+Responses:
+200 - Purchase successful
+400 - Vehicle is out of stock
+401 - Unauthorized
+404 - Vehicle not found
+500 - Internal server error
+
+Testing:
+- Successful purchase
+- Vehicle not found
+- Out of stock
+- Unauthorized access
+- Database error
+
+## Restock Vehicle API
+
+### Endpoint
+
+POST /api/vehicles/:id/restock
+
+### Access
+
+Admin Only (JWT Authentication Required)
+
+### Request Body
+
+{
+  "quantity": 5
+}
+
+### Business Rules
+
+- Vehicle must exist.
+- Restock quantity must be greater than zero.
+- Increase the current inventory by the provided quantity.
+- Save the updated vehicle.
+- Return the updated vehicle details.
+
+### Response
+
+200 OK
+
+{
+  "message": "Vehicle restocked successfully",
+  "vehicle": { ... }
+}
+
+### Error Responses
+
+400 - Invalid quantity
+
+401 - Unauthorized
+
+403 - Forbidden (Non-admin)
+
+404 - Vehicle not found
+
+500 - Internal Server Error

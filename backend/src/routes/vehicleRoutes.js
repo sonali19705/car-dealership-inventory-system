@@ -27,4 +27,16 @@ router.delete(
     adminMiddleware,
     vehicleController.deleteVehicle
 );
+router.post(
+    "/:id/purchase",
+    authMiddleware,
+    vehicleController.purchaseVehicle
+);
+
+router.post(
+    "/:id/restock",
+    authMiddleware,
+    adminMiddleware,
+    vehicleController.restockVehicle
+);
 module.exports = router;
