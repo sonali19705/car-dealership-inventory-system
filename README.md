@@ -187,15 +187,8 @@ npm run dev
 ## Admin
 
 ```
-Email:
-Password:
-```
-
-## Customer
-
-```
-Email:
-Password:
+Email: admin@gmail.com
+Password: Admin123
 ```
 
 ---
