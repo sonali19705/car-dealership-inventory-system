@@ -526,3 +526,64 @@ Set up the React frontend with the required libraries and project structure.
 ### Next Step
 
 Implement user authentication and protected routes.
+
+Why this architecture?
+
+This follows the Separation of Concerns principle:
+
+UI → pages/ and components/
+API communication → services/
+Global state → context/
+Reusable logic → hooks/
+Routing & access control → routes/
+Configuration & constants → utils/
+
+Each file has a single responsibility, which makes the project easier to maintain, test, and extend. This aligns with clean architecture principles and is the kind of organization interviewers generally expect in a React application.
+
+# Frontend Authentication
+
+## Completed Features
+
+- React + Vite setup
+- Tailwind CSS configuration
+- React Router setup
+- Authentication Context
+- Protected Routes
+- Login Page
+- Registration Page
+- Reusable Input Components
+- Password Visibility Toggle
+- Responsive Authentication UI
+
+## Folder Structure
+
+components/
+context/
+hooks/
+pages/
+routes/
+services/
+utils/
+
+## Authentication Flow
+
+Register
+↓
+
+Login
+
+↓
+
+JWT Token Storage
+
+↓
+
+Context API
+
+↓
+
+Protected Routes
+
+↓
+
+Logout

@@ -255,3 +255,28 @@ Requirements:
 - Create a scalable folder structure including pages, components, services, context, hooks, routes, and utils.
 - Configure a centralized Axios instance with a base URL and JWT interceptor.
 - Prepare the project for implementing authentication and vehicle management features.
+
+### Prompt 15
+Set up the frontend for the Car Dealership Inventory System using React, Vite, Tailwind CSS, React Router, Axios, and Context API.
+
+Requirements:
+- Create a scalable folder structure.
+- Configure routing.
+- Create reusable UI components.
+- Implement authentication context.
+- Configure API services.
+- Prepare the project for customer and admin dashboards.
+- Keep the architecture modular and maintainable.
+
+### Prompt 16
+Implement responsive Login and Registration pages for the Car Dealership Inventory System.
+
+Requirements:
+- Use React and Tailwind CSS.
+- Create reusable Input, Button, Alert, and PasswordInput components.
+- Implement authentication using Context API.
+- Connect to backend Register and Login APIs.
+- Store JWT securely.
+- Configure Protected Routes.
+- Maintain consistent design and responsive layout.
+- Review and refactor the implementation following clean code practices.

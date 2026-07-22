@@ -174,14 +174,47 @@ This project follows a **Test-Driven Development (TDD)** workflow.
 
 ### Tech Stack
 
-- React (Vite)
+- React 19
+- Vite
 - React Router DOM
 - Axios
 - Tailwind CSS
+- Context API
 
 ### Project Structure
 
 The frontend follows a modular structure with separate folders for pages, components, services, context, hooks, routes, and utilities to improve maintainability and scalability.
+frontend/
+│
+├── components/
+│   ├── common/
+│   ├── admin/
+│   ├── layout/
+│   └── vehicle/
+│
+├── context/
+├── hooks/
+├── pages/
+├── routes/
+├── services/
+├── utils/
+
+## Frontend Features
+
+### Authentication
+- ✅ User Registration
+- ✅ User Login
+- ✅ JWT Authentication
+- ✅ Protected Routes
+- ✅ Persistent Authentication
+- ✅ Logout Support
+
+### UI
+- ✅ React + Vite
+- ✅ Tailwind CSS
+- ✅ Responsive Authentication Pages
+- ✅ Reusable UI Components
+- ✅ Context API for Authentication
 
 ## My AI Usage
 
@@ -220,6 +253,19 @@ ChatGPT assisted with:
 - Reviewing error handling, authorization, and code organization
 
 All generated code was manually reviewed, understood, modified where necessary, and thoroughly tested before being committed.
+
+### Frontend Authentication
+
+ChatGPT assisted with:
+
+- Planning the frontend architecture
+- Designing reusable React component structure
+- Creating authentication flow using Context API
+- Designing responsive Login and Register pages
+- Reviewing folder organization and routing strategy
+- Suggesting reusable service layer and API integration
+
+All generated code was manually reviewed, understood, modified where necessary, and tested before being committed.
 ### Reflection
 
 AI acted as a development assistant for brainstorming, architecture discussions, testing strategy, and code review. GitHub Copilot assisted with code completion. I reviewed, understood, tested, and modified all AI-generated suggestions before including them in the project.
