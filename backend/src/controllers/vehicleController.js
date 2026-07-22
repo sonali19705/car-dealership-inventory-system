@@ -80,10 +80,33 @@ const deleteVehicle = async (req, res) => {
         });
     }
 };
+const purchaseVehicle = async (req, res) => {
+    try {
+        const result = await vehicleService.purchaseVehicle(req.params.id);
+
+        if (result.status !== 200) {
+            return res.status(result.status).json({
+                message: result.message,
+            });
+        }
+
+        return res.status(200).json({
+            message: "Vehicle purchased successfully",
+            vehicle: result.vehicle,
+        });
+
+    } catch (error) {
+        return res.status(500).json({
+            message: "Internal server error",
+        });
+    }
+};
+
 module.exports = {
     getAllVehicles,
     searchVehicles,
     createVehicle,
     updateVehicle,
     deleteVehicle,
+    purchaseVehicle,
 };

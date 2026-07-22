@@ -436,3 +436,28 @@ Endpoint
 Response
 Error Handling
 Tests
+
+## Purchase Vehicle API
+
+Endpoint:
+POST /api/vehicles/:id/purchase
+
+Access:
+Authenticated Users
+
+Description:
+Allows an authenticated user to purchase a vehicle by reducing the available stock by one.
+
+Responses:
+200 - Purchase successful
+400 - Vehicle is out of stock
+401 - Unauthorized
+404 - Vehicle not found
+500 - Internal server error
+
+Testing:
+- Successful purchase
+- Vehicle not found
+- Out of stock
+- Unauthorized access
+- Database error

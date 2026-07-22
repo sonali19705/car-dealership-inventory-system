@@ -203,3 +203,23 @@ Requirements:
 - Follow strict but pragmatic TDD.
 - Generate comprehensive Jest and Supertest test cases covering success, unauthorized access, forbidden access, vehicle not found, and server error scenarios.
 - Keep the implementation consistent with the existing project structure.
+
+### Prompt 12
+Implement a secure Purchase Vehicle API for the Car Dealership Inventory Management System.
+
+Requirements:
+- Technology: Node.js, Express, MongoDB, and Mongoose.
+- Endpoint: POST /api/vehicles/:id/purchase.
+- Follow the existing project architecture:
+  Route → Authentication Middleware → Controller → Service → Model.
+- Only authenticated users should be allowed to purchase vehicles.
+- Retrieve the vehicle by ID.
+- Return 404 if the vehicle does not exist.
+- Return 400 if the vehicle is out of stock.
+- Decrease the vehicle quantity by one upon successful purchase.
+- Persist the updated quantity to the database.
+- Return the updated vehicle with a success message.
+- Keep controllers thin and place business logic in the service layer.
+- Follow Test-Driven Development (TDD).
+- Generate comprehensive Jest and Supertest test cases for successful purchase, vehicle not found, out-of-stock, unauthorized access, and database error scenarios.
+- Maintain consistency with the existing project architecture and coding style.
