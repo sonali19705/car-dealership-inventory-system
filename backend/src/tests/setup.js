@@ -1,4 +1,8 @@
-require("dotenv").config();
+process.env.NODE_ENV = "test";
+
+require("dotenv").config({
+  path: ".env.test",
+});
 
 const mongoose = require("mongoose");
 const connectDB = require("../config/db");
