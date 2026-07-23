@@ -2,157 +2,199 @@
 
 # AI Prompt History
 
-This document summarizes the major AI-assisted prompts used during the development of the **Car Dealership Inventory Management System**.
+This document records the major AI-assisted prompts used during the development of the **Car Dealership Inventory Management System**.
 
-AI was used as a development assistant for architecture discussions, Test-Driven Development (TDD) planning, implementation guidance, debugging, code review, and documentation. All AI-generated suggestions were manually reviewed, understood, modified where necessary, and tested before being included in the project.
+AI was used as a development assistant for software architecture discussions, Test-Driven Development (TDD) planning, implementation guidance, debugging, code review, deployment assistance, responsive UI improvements, and documentation.
 
----
-
-## Prompt 1 – Project Planning
-
-**Purpose**
-
-Plan the project architecture and development workflow.
-
-**Summary**
-
-- Planned the overall project structure.
-- Selected the technology stack.
-- Defined the TDD workflow.
-- Discussed clean architecture and REST API design.
+All AI-generated suggestions were manually reviewed, understood, modified where necessary, tested, and integrated only after verification.
 
 ---
 
-## Prompt 2 – Backend Setup
+# Prompt 1 – Project Planning
 
-**Purpose**
+## Purpose
 
-Set up the Express.js backend.
+Plan the overall project architecture and development roadmap.
 
-**Summary**
+## AI Assistance
 
-- Designed the folder structure.
-- Configured Express, MongoDB, and environment variables.
-- Set up Jest and Supertest.
-- Established the Route → Middleware → Controller → Service → Model architecture.
-
----
-
-## Prompt 3 – Authentication
-
-**Purpose**
-
-Implement secure user authentication.
-
-**Summary**
-
-- Planned user registration and login.
-- Designed JWT-based authentication.
-- Discussed password hashing with bcrypt.
-- Generated TDD test scenarios.
+- Selected the MERN technology stack.
+- Designed the project folder structure.
+- Planned feature implementation order.
+- Discussed REST API design.
+- Planned a Test-Driven Development workflow.
+- Suggested a layered backend architecture.
 
 ---
 
-## Prompt 4 – Vehicle Management APIs
+# Prompt 2 – Backend Setup
 
-**Purpose**
+## Purpose
 
-Implement vehicle inventory management.
+Initialize the backend application.
 
-**Summary**
+## AI Assistance
 
-- Planned CRUD APIs for vehicles.
-- Designed validation and authorization flow.
-- Generated test cases for each endpoint.
-- Reviewed API design and error handling.
-
----
-
-## Prompt 5 – Inventory Management
-
-**Purpose**
-
-Implement purchase and restock workflows.
-
-**Summary**
-
-- Planned inventory update logic.
-- Designed purchase and restock APIs.
-- Reviewed edge cases and business rules.
-- Generated Jest and Supertest test scenarios.
+- Configure Express.js project structure.
+- Set up MongoDB Atlas connection.
+- Configure environment variables.
+- Organize routes, controllers, services, and middleware.
+- Configure Jest and Supertest for testing.
 
 ---
 
-## Prompt 6 – Frontend Architecture
+# Prompt 3 – Authentication
 
-**Purpose**
+## Purpose
 
-Set up the React frontend.
+Implement secure authentication.
 
-**Summary**
+## AI Assistance
 
-- Planned project structure.
-- Configured React Router, Axios, and Context API.
-- Designed reusable components.
-- Reviewed frontend architecture.
-
----
-
-## Prompt 7 – Frontend Features
-
-**Purpose**
-
-Implement the user interface.
-
-**Summary**
-
-- Planned authentication pages.
-- Designed Admin and Customer dashboards.
-- Reviewed reusable components.
-- Integrated frontend with backend APIs.
-- Improved responsiveness and user experience.
+- Design user registration flow.
+- Design login flow.
+- Plan JWT authentication.
+- Configure bcrypt password hashing.
+- Generate authentication test scenarios.
+- Review authentication middleware.
 
 ---
 
-## Prompt 8 – Testing & Debugging
+# Prompt 4 – Vehicle Management APIs
 
-**Purpose**
+## Purpose
 
-Validate application functionality.
+Implement inventory CRUD functionality.
 
-**Summary**
+## AI Assistance
 
-- Reviewed failing test cases.
-- Debugged API and authentication issues.
-- Improved test coverage.
-- Verified application behavior through Jest and Supertest.
+- Design vehicle schema.
+- Plan Create, Read, Update, and Delete APIs.
+- Review request validation.
+- Generate API test cases.
+- Discuss authorization rules.
 
 ---
 
-## Prompt 9 – Documentation
+# Prompt 5 – Inventory Management
 
-**Purpose**
+## Purpose
+
+Implement purchase and inventory workflows.
+
+## AI Assistance
+
+- Design purchase workflow.
+- Plan inventory stock updates.
+- Design vehicle restocking.
+- Discuss business rules.
+- Generate edge-case test scenarios.
+
+---
+
+# Prompt 6 – Frontend Architecture
+
+## Purpose
+
+Develop the React frontend.
+
+## AI Assistance
+
+- Plan React folder structure.
+- Configure React Router.
+- Configure Axios services.
+- Discuss Context API state management.
+- Design reusable UI components.
+
+---
+
+# Prompt 7 – User Interface
+
+## Purpose
+
+Implement the application interface.
+
+## AI Assistance
+
+- Design Login and Registration pages.
+- Build Admin Dashboard.
+- Build Customer Dashboard.
+- Integrate frontend with backend APIs.
+- Improve responsive layouts.
+- Improve overall user experience.
+
+---
+
+# Prompt 8 – Testing & Debugging
+
+## Purpose
+
+Improve application quality.
+
+## AI Assistance
+
+- Review failing Jest tests.
+- Debug authentication issues.
+- Debug API responses.
+- Improve test coverage.
+- Validate middleware behavior.
+- Review edge cases.
+
+---
+
+# Prompt 9 – Deployment
+
+## Purpose
+
+Deploy the application.
+
+## AI Assistance
+
+- Deploy backend to Render.
+- Deploy frontend to Vercel.
+- Configure environment variables.
+- Fix CORS configuration.
+- Configure React Router support on Vercel.
+- Troubleshoot deployment issues.
+
+---
+
+# Prompt 10 – Documentation
+
+## Purpose
 
 Prepare the project for submission.
 
-**Summary**
+## AI Assistance
 
-- Organized the README.
-- Documented APIs and project setup.
-- Summarized testing results.
-- Documented AI usage in a transparent manner.
+- Organize README structure.
+- Document APIs.
+- Document setup instructions.
+- Document deployment process.
+- Summarize testing results.
+- Document AI usage transparently.
 
 ---
 
-# Summary
+# AI Usage Summary
 
-AI was primarily used for:
+AI was used throughout the project for:
 
-- Project planning
 - Software architecture discussions
-- Test-Driven Development (TDD) guidance
-- Code review and debugging
-- Test case generation
+- Test-Driven Development (TDD) planning
+- Backend API design
+- Authentication planning
+- Frontend architecture
+- UI component planning
+- Debugging assistance
+- Deployment guidance
 - Documentation preparation
+- Code review suggestions
 
-AI served as a development assistant throughout the project. All implementation decisions, testing, debugging, and final code were manually reviewed, understood, modified where necessary, and validated before submission.
+AI was **not** used as a replacement for implementation or understanding. Every AI-generated suggestion was manually reviewed, adapted where necessary, tested, and validated before being included in the final project.
+
+---
+
+# Reflection
+
+Using AI accelerated project planning, boilerplate generation, debugging, and documentation while allowing greater focus on implementation, testing, and problem-solving. AI served as a development assistant rather than an autonomous code generator. Final design decisions, implementation, testing, deployment, and validation were performed manually before submission.
