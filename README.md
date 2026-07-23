@@ -337,81 +337,91 @@ Time:        72.782 s
 - ✅ 100% Function Coverage
 - ✅ Authentication, Authorization, Vehicle Management, Inventory Operations, and Middleware thoroughly tested.
 
+## 📷 Application Screenshots
+
 ### Test Report Screenshot
 
-![Test Report](screenshots/test-report.png)
-
-# 📷 Screenshots
-
-## Login Page
-
-![Login Page](screenshots/login.png)
+<p align="center">
+  <img src="screenshots/test-report.png" alt="Test Report" width="700">
+</p>
 
 ---
 
-## Register Page
+### Login Page
 
-![Register Page](screenshots/register.png)
+<p align="center">
+  <img src="screenshots/login.png" alt="Login Page" width="700">
+</p>
 
 ---
 
-## Admin Dashboard
+### Register Page
+
+<p align="center">
+  <img src="screenshots/register.png" alt="Register Page" width="700">
+</p>
+
+---
+
+### Admin Dashboard
 
 Shows dashboard statistics, vehicle inventory, search filters, and admin actions.
 
-![Admin Dashboard](screenshots/admin-dashboard.png)
+<p align="center">
+  <img src="screenshots/admin-dashboard.png" alt="Admin Dashboard" width="700">
+</p>
 
 ---
 
-## Customer Dashboard
+### Customer Dashboard
 
 Browse, search, and purchase available vehicles.
 
-![Customer Dashboard](screenshots/customer-dashboard.png)
+<p align="center">
+  <img src="screenshots/customer-dashboard.png" alt="Customer Dashboard" width="700">
+</p>
 
 ---
 
-## Add / Edit Vehicle
+### Add / Edit Vehicle
 
 Admin interface for adding and updating vehicle details.
 
-![Add Vehicle](screenshots/add-vehicle-modal.png)
+<p align="center">
+  <img src="screenshots/add-vehicle-modal.png" alt="Add Vehicle" width="700">
+</p>
 
 ---
 
-## Vehicle Search & Filtering
+### Vehicle Search & Filtering
 
 Search vehicles by make, model, category, and price range.
 
-![Search Vehicles](screenshots/search-filter.png)
+<p align="center">
+  <img src="screenshots/search-filter.png" alt="Search Vehicles" width="700">
+</p>
 
 ---
 
-## Purchase Workflow
+### Purchase Workflow
 
 Customer successfully purchases a vehicle and inventory updates automatically.
 
-![Purchase Vehicle](screenshots/purchase-success.png)
-
+<p align="center">
+  <img src="screenshots/purchase-success.png" alt="Purchase Vehicle" width="700">
+</p>
 ---
 
-# 🌐 Deployment (Optional)
+# 🌐 Live Demo
 
-## Live Application
+> **Frontend:** https://your-vercel-url.vercel.app  
+> **Backend API:** https://your-render-url.onrender.com
 
-![Home Page](screenshots/home-page.png)
-Frontend:
+### Home Page
 
-```
-Vercel URL
-```
-
-Backend:
-
-```
-Render URL
-```
-
+<p align="center">
+  <img src="screenshots/home-page.png" alt="Home Page" width="850"/>
+</p>
 ---
 
 # 🤖 My AI Usage
