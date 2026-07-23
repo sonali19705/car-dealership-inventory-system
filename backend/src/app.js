@@ -4,7 +4,15 @@ const cors = require("cors");
 const app = express();
 
 // TEMPORARY: Allow all origins for testing
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://car-dealership-inventory-web.vercel.app",
+    ],
+    credentials: true,
+  })
+);
 
 app.use(express.json());
 

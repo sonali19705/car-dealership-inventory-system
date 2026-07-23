@@ -4,7 +4,7 @@ export const API_BASE_URL = "http://localhost:5000/api";
 // APP DETAILS
 // ==============================
 
-export const APP_NAME = "Dealership Inventory";
+export const APP_NAME = "Car Inventory";
 
 export const APP_TAGLINE =
   "Car Dealership Inventory Management System";
