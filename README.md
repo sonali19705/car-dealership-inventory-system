@@ -189,8 +189,8 @@ npm run dev
 ```
 Email: admin@gmail.com
 Password: Admin123
-```
 
+```
 ---
 
 # 📡 REST API
@@ -462,4 +462,8 @@ The repository includes a **PROMPTS.md** file containing the AI prompts used thr
 
 # 📜 License
 
+<<<<<<< HEAD
 Developed for the **Incubyte Software Craftsman Internship Assessment**.
+=======
+Developed for the **Incubyte Software Craftsman Internship Assessment**.
+>>>>>>> origin/main
