@@ -428,14 +428,6 @@ Time:        72.782 s
 
 ---
 
-## Home Page
-
-<p align="center">
-<img src="screenshots/home-page.png" width="850">
-</p>
-
----
-
 # 🤖 My AI Usage
 
 ## AI Tools Used
