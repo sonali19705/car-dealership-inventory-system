@@ -16,6 +16,14 @@ app.use(
 
 app.use(express.json());
 
+// ✅ Root route
+app.get("/", (req, res) => {
+  res.json({
+    message: "Car Dealership Inventory API is running",
+    status: "OK",
+  });
+});
+
 const authRoutes = require("./routes/authRoutes");
 const vehicleRoutes = require("./routes/vehicleRoutes");
 
